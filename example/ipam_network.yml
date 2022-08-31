@@ -1,0 +1,60 @@
+---
+apiVersion: xxxx.cni.cncf.io/v1alpha1
+kind: NetworkIP
+metadata:
+  name: test-network-ipv4
+spec:
+  ipAllocations:
+    - name: testIPv4
+      subnet : 10.1.1.1/24
+      gateway: 10.1.1.254
+      range:
+        start: 10.1.1.100
+        end: 10.1.1.250
+      exclude:
+        - 10.1.1.200
+        - 10.1.1.254
+      route:
+        - dst: 0.0.0.0/0
+          gw: 10.1.1.1
+---
+apiVersion: xxxx.cni.cncf.io/v1alpha1
+kind: NetworkIP
+metadata:
+  name: test-network-ipv6
+spec:
+  ipAllocations:
+    - name: testIPv6
+      subnet : 10::1/64
+      gateway: 10::1::fe
+      range:
+        start: 10::1:1
+        end: 10::1:ee
+      exclude:
+        - 10::1:f0
+        - 10::1:f2
+---
+apiVersion: xxxx.cni.cncf.io/v1alpha1
+kind: NetworkIP
+metadata:
+  name: test-network-dual
+spec:
+  ipAllocations:
+    - name: testIPv4
+      subnet : 10.1.1.1/24
+      gateway: 10.1.1.254
+      range:
+        start: 10.1.1.100
+        end: 10.1.1.250
+      exclude:
+        - 10.1.1.200
+        - 10.1.1.254
+    - name: testIPv6
+      subnet : 10::1/64
+      gateway: 10::1::fe
+      range:
+        start: 10::1:1
+        end: 10::1:ee
+      exclude:
+        - 10::1:f0
+        - 10::1:f2

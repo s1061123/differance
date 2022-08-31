@@ -1,0 +1,27 @@
+[package]
+name = "differance"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libcni = { version = "0.1.0", path = "./libcni" }
+anyhow = "1.0.44"
+async-std = "1.12.0"
+clap = "3.2.10"
+either = "1.6.1"
+ipnet = "2.5.0"
+k8s-openapi = { version = "0.15.0", features = ["v1_24"] }
+kube = { version = "0.74.0", features = ["runtime", "derive"] }
+redis = { version = "0.21.5", features = ["async-std-comp"] }
+schemars = "0.8.6"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_json = "1.0.81"
+serde_yaml = "0.8.21"
+thiserror = "1.0.31"
+tokio = { version = "1.14.0", features = ["full"] }
+tokio-util = "0.7.0"
+tracing = "0.1.29"
+tracing-subscriber = "0.3.3"
+validator = { version = "0.15.0", features = ["derive"] }
