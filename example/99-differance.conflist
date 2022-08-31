@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "cniVersion": "0.4.0",
+  "plugins": [
+    {
+      "type": "macvlan",
+      "capabilities": { "ips": true },
+      "master": "eth1",
+      "mode": "bridge",
+      "ipam": {
+        "type": "differance-cni",
+        "redis_ip": "redis://10.1.1.1/",
+        "kubeconfig": "/tmp/kubeconfig",
+        "debug_file": "/tmp/test1.out",
+        "network": "default/test-network-ipv4"
+      }
+    }
+  ]
+}	
